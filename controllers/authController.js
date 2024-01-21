@@ -101,3 +101,13 @@ export const loginController = async (req, res) => {
     });
   }
 };
+
+// test controller
+export const testcontroller = (req, res) => {
+  try {
+    res.send("Protexted Routes");
+  } catch (error) {
+    console.log(error);
+    res.send({ error });
+  }
+};
