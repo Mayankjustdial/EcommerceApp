@@ -8,14 +8,14 @@ export const registerController = async (req, res) => {
 
     //   validation
     if (!name || !email || !password || !phone || !address) {
-      return res.send({ error: "All fields are required" });
+      return res.send({ message: "All fields are required" });
     }
 
     // existing user
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
       return res.status(200).send({
-        success: true,
+        success: false,
         message: "Already registered please login",
       });
     }
